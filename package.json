@@ -1,0 +1,40 @@
+{
+  "name": "ultron",
+  "version": "1.0.0",
+  "description": "Ultron is high-intelligence robot. It gathers intel so it can start improving upon his rudimentary design",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec --ui bdd test.js",
+    "watch": "mocha --watch --reporter spec --ui bdd test.js",
+    "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+    "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unshiftio/ultron"
+  },
+  "keywords": [
+    "Ultron",
+    "robot",
+    "gather",
+    "intelligence",
+    "event",
+    "events",
+    "eventemitter",
+    "emitter",
+    "cleanup"
+  ],
+  "author": "Arnout Kazemier",
+  "license": "MIT",
+  "devDependencies": {
+    "assume": "0.0.x",
+    "eventemitter3": "0.1.x",
+    "istanbul": "0.3.x",
+    "mocha": "2.0.x",
+    "pre-commit": "0.0.x"
+  },
+  "bugs": {
+    "url": "https://github.com/unshiftio/ultron/issues"
+  },
+  "homepage": "https://github.com/unshiftio/ultron"
+}
