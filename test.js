@@ -33,6 +33,24 @@ describe('Ultron', function () {
     }
   });
 
+  it('allows removal through the event emitter', function () {
+    function foo() {}
+    function bar() {}
+
+    ultron.on('foo', foo);
+    ultron.once('foo', bar);
+
+    assume(foo.__ultron).equals(ultron.id);
+    assume(bar.__ultron).equals(ultron.id);
+    assume(ee.listeners('foo').length).equals(2);
+
+    ee.removeListener('foo', foo);
+    assume(ee.listeners('foo').length).equals(1);
+
+    ee.removeListener('foo', bar);
+    assume(ee.listeners('foo').length).equals(0);
+  });
+
   describe('#on', function () {
     it('assigns a listener', function () {
       assume(ee.listeners('foo').length).equals(0);
