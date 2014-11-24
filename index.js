@@ -72,7 +72,7 @@ Ultron.prototype.remove = function remove() {
   // events that were assigned through us.
   //
   if (args.length === 1 && 'string' === typeof args[0]) {
-    args = args[0].split(/[\,|\s]+/);
+    args = args[0].split(/[, ]+/);
   } else if (!args.length) {
     args = [];
 
