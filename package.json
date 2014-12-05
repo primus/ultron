@@ -1,6 +1,6 @@
 {
   "name": "ultron",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Ultron is high-intelligence robot. It gathers intel so it can start improving upon his rudimentary design",
   "main": "index.js",
   "scripts": {
