@@ -7,8 +7,8 @@
     "100%": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
     "test": "mocha test.js",
     "watch": "mocha --watch test.js",
-    "coverage": "istanbul cover ./node_modules/.bin/_mocha -- test.js",
-    "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- test.js"
+    "coverage": "istanbul cover _mocha -- test.js",
+    "test-travis": "istanbul cover _mocha --report lcovonly -- test.js"
   },
   "repository": {
     "type": "git",
@@ -28,11 +28,11 @@
   "author": "Arnout Kazemier",
   "license": "MIT",
   "devDependencies": {
-    "assume": "1.2.x",
+    "assume": "1.3.x",
     "eventemitter3": "1.1.x",
-    "istanbul": "0.3.x",
-    "mocha": "2.2.x",
-    "pre-commit": "1.0.x"
+    "istanbul": "0.4.x",
+    "mocha": "2.4.x",
+    "pre-commit": "1.1.x"
   },
   "bugs": {
     "url": "https://github.com/unshiftio/ultron/issues"
