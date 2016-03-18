@@ -85,6 +85,10 @@ Ultron.prototype.remove = function remove() {
       for (event in ee._events) {
         if (has.call(ee._events, event)) args.push(event);
       }
+
+      if (Object.getOwnPropertySymbols) {
+        args = args.concat(Object.getOwnPropertySymbols(ee._events));
+      }
     }
   }
 

@@ -288,6 +288,37 @@ describe('Ultron', function () {
       assume(ee.listeners('bar').length).equals(0);
       assume(ee.listeners('baz').length).equals(1);
     });
+
+    if ('undefined' !== typeof Symbol) it('works with ES6 symbols', function () {
+      var s = Symbol('s');
+
+      function foo() {}
+      function bar() {}
+      function baz() {}
+
+      ee.on(s, foo);
+      ultron.on(s, bar);
+      assume(ee.listeners(s).length).equals(2);
+
+      ultron.remove(s);
+      assume(ee.listeners(s).length).equals(1);
+      assume(ee.listeners(s)[0]).equals(foo);
+
+      ultron.once(s, bar);
+      assume(ee.listeners(s).length).equals(2);
+
+      ultron.remove(s);
+      assume(ee.listeners(s).length).equals(1);
+      assume(ee.listeners(s)[0]).equals(foo);
+
+      ultron.on(s, bar);
+      ultron.on(s, baz);
+      assume(ee.listeners(s).length).equals(3);
+
+      ultron.remove();
+      assume(ee.listeners(s).length).equals(1);
+      assume(ee.listeners(s)[0]).equals(foo);
+    });
   });
 
   describe('#destroy', function () {
