@@ -184,6 +184,7 @@ describe('Ultron', function () {
       assume('__ultron' in once).is.false();
       assume('__ultron' in on).is.false();
 
+      ee.removeAllListeners();
       ultron.destroy();
 
       ee = new EE();
@@ -215,14 +216,12 @@ describe('Ultron', function () {
       ultron.remove('foo');
       assume(ee.listeners('foo').length).equals(1);
       assume(ee.listeners('foo')[0]).equals(foo);
-    });
 
-    it('removes only our assigned `once` listeners from regular EE', function () {
-      var ee = new EE()
-        , ultron = new Ultron(ee);
+      ee.removeAllListeners();
+      ultron.destroy();
 
-      function foo() {}
-      function bar() {}
+      ee = new EE();
+      ultron = new Ultron(ee);
 
       ee.once('foo', foo);
       ultron.once('foo', bar);
@@ -236,6 +235,27 @@ describe('Ultron', function () {
     it('removes all assigned events if called without args', function () {
       function foo() {}
       function bar() {}
+
+      assume(ultron.remove()).equals(ultron);
+
+      ultron.on('foo', foo);
+      ultron.on('bar', bar);
+
+      assume(ee.listeners('foo').length).equals(1);
+      assume(ee.listeners('bar').length).equals(1);
+
+      ultron.remove();
+
+      assume(ee.listeners('foo').length).equals(0);
+      assume(ee.listeners('bar').length).equals(0);
+
+      ee.removeAllListeners();
+      ultron.destroy();
+
+      ee = new EE();
+      ultron = new Ultron(ee);
+
+      assume(ultron.remove()).equals(ultron);
 
       ultron.on('foo', foo);
       ultron.on('bar', bar);
@@ -295,6 +315,35 @@ describe('Ultron', function () {
       function foo() {}
       function bar() {}
       function baz() {}
+
+      ee.on(s, foo);
+      ultron.on(s, bar);
+      assume(ee.listeners(s).length).equals(2);
+
+      ultron.remove(s);
+      assume(ee.listeners(s).length).equals(1);
+      assume(ee.listeners(s)[0]).equals(foo);
+
+      ultron.once(s, bar);
+      assume(ee.listeners(s).length).equals(2);
+
+      ultron.remove(s);
+      assume(ee.listeners(s).length).equals(1);
+      assume(ee.listeners(s)[0]).equals(foo);
+
+      ultron.on(s, bar);
+      ultron.on(s, baz);
+      assume(ee.listeners(s).length).equals(3);
+
+      ultron.remove();
+      assume(ee.listeners(s).length).equals(1);
+      assume(ee.listeners(s)[0]).equals(foo);
+
+      ee.removeAllListeners();
+      ultron.destroy();
+
+      ee = new EE();
+      ultron = new Ultron(ee);
 
       ee.on(s, foo);
       ultron.on(s, bar);
