@@ -104,7 +104,7 @@ you can still use the EventEmitter's `removeListener(event, fn)` API:
 ```js
 function foo() {}
 
-ulton.on('foo', foo);
+ultron.on('foo', foo);
 events.removeListener('foo', foo);
 ```
 
