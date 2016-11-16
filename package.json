@@ -29,9 +29,9 @@
   "license": "MIT",
   "devDependencies": {
     "assume": "1.4.x",
-    "eventemitter3": "1.2.x",
+    "eventemitter3": "2.0.x",
     "istanbul": "0.4.x",
-    "mocha": "2.4.x",
+    "mocha": "3.1.x",
     "pre-commit": "1.1.x"
   },
   "bugs": {
