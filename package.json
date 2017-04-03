@@ -28,7 +28,7 @@
   "author": "Arnout Kazemier",
   "license": "MIT",
   "devDependencies": {
-    "assume": "1.4.x",
+    "assume": "~1.5.0",
     "eventemitter3": "2.0.x",
     "istanbul": "0.4.x",
     "mocha": "~3.2.0",
