@@ -289,7 +289,7 @@ describe('Ultron', function () {
       assume(ee.listeners('baz').length).equals(1);
     });
 
-    it('removes multiple listeners if first arg is seperated string', function () {
+    it('removes multiple listeners if first arg is separated string', function () {
       function foo() {}
       function bar() {}
       function baz() {}
