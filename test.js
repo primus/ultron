@@ -229,7 +229,12 @@ describe('Ultron', function () {
 
       ultron.remove('foo');
       assume(ee.listeners('foo').length).equals(1);
-      assume(ee.listeners('foo')[0].listener).equals(foo);
+      var actual = ee.listeners('foo')[0];
+      //
+      // In Node.js 8+ `EventEmitter#listeners()` returns the original listener
+      // also for once listeners.
+      //
+      assume(actual.listener || actual).equals(foo);
     });
 
     it('removes all assigned events if called without args', function () {
