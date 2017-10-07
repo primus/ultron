@@ -1,18 +1,13 @@
 sudo: false
 language: node_js
 node_js:
-  - "5"
+  - "8"
+  - "6"
   - "4"
-  - "iojs"
-  - "0.12"
-  - "0.10"
-  - "0.8"
-before_install:
-  - 'if [ "${TRAVIS_NODE_VERSION}" == "0.8" ]; then npm install -g npm@2.14.16; fi'
 script:
   - "npm run test-travis"
 after_script:
-  - "npm install coveralls@2 && cat coverage/lcov.info | coveralls"
+  - "npm install coveralls@3 && cat coverage/lcov.info | coveralls"
 matrix:
   fast_finish: true
 notifications:
