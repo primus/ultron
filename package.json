@@ -31,7 +31,7 @@
     "assume": "~2.1.0",
     "eventemitter3": "~3.1.0",
     "istanbul": "0.4.x",
-    "mocha": "~5.1.0",
+    "mocha": "~5.2.0",
     "pre-commit": "~1.2.0"
   },
   "bugs": {
