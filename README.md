@@ -1,6 +1,6 @@
 # Ultron
 
-[![Made by unshift](https://img.shields.io/badge/made%20by-unshift-00ffcc.svg?style=flat-square)](http://unshift.io)[![Version npm](http://img.shields.io/npm/v/ultron.svg?style=flat-square)](http://browsenpm.org/package/ultron)[![Build Status](http://img.shields.io/travis/unshiftio/ultron/master.svg?style=flat-square)](https://travis-ci.org/unshiftio/ultron)[![Dependencies](https://img.shields.io/david/unshiftio/ultron.svg?style=flat-square)](https://david-dm.org/unshiftio/ultron)[![Coverage Status](http://img.shields.io/coveralls/unshiftio/ultron/master.svg?style=flat-square)](https://coveralls.io/r/unshiftio/ultron?branch=master)[![IRC channel](http://img.shields.io/badge/IRC-irc.freenode.net%23unshift-00a8ff.svg?style=flat-square)](http://webchat.freenode.net/?channels=unshift)
+[![Version npm](http://img.shields.io/npm/v/ultron.svg?style=flat-square)](http://browsenpm.org/package/ultron)[![Build Status](http://img.shields.io/travis/websockets/ultron/master.svg?style=flat-square)](https://travis-ci.org/websockets/ultron)[![Dependencies](https://img.shields.io/david/websockets/ultron.svg?style=flat-square)](https://david-dm.org/websockets/ultron)[![Coverage Status](http://img.shields.io/coveralls/websockets/ultron/master.svg?style=flat-square)](https://coveralls.io/r/websockets/ultron?branch=master)
 
 Ultron is a high-intelligence robot. It gathers intelligence so it can start
 improving upon his rudimentary design. It will learn your event emitting
@@ -40,7 +40,7 @@ can create the instance:
 //
 // For the sake of this example we're going to construct an empty EventEmitter
 //
-var EventEmitter = require('events').EventEmitter; // or require('eventmitter3');
+var EventEmitter = require('events'); // or require('eventmitter3');
 var events = new EventEmitter();
 
 var ultron = new Ultron(events);

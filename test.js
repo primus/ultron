@@ -3,8 +3,8 @@ describe('Ultron', function () {
   'use strict';
 
   var EventEmitter = require('eventemitter3')
-    , EE = require('events').EventEmitter
     , assume = require('assume')
+    , EE = require('events')
     , Ultron = require('./')
     , ultron
     , ee;

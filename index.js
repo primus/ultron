@@ -19,7 +19,7 @@ var id = 0;
  *
  * @constructor
  * @param {EventEmitter} ee EventEmitter instance we need to wrap.
- * @api public
+ * @public
  */
 function Ultron(ee) {
   if (!(this instanceof Ultron)) return new Ultron(ee);
@@ -34,8 +34,8 @@ function Ultron(ee) {
  * @param {String} event Name of the event.
  * @param {Functon} fn Callback function.
  * @param {Mixed} context The context of the function.
- * @returns {Ultron}
- * @api public
+ * @returns {Ultron} Chaining.
+ * @public
  */
 Ultron.prototype.on = function on(event, fn, context) {
   fn.__ultron = this.id;
@@ -49,8 +49,8 @@ Ultron.prototype.on = function on(event, fn, context) {
  * @param {String} event Name of the event.
  * @param {Function} fn Callback function.
  * @param {Mixed} context The context of the function.
- * @returns {Ultron}
- * @api public
+ * @returns {Ultron} Chaining.
+ * @public
  */
 Ultron.prototype.once = function once(event, fn, context) {
   fn.__ultron = this.id;
@@ -62,8 +62,8 @@ Ultron.prototype.once = function once(event, fn, context) {
 /**
  * Remove the listeners we assigned for the given event.
  *
- * @returns {Ultron}
- * @api public
+ * @returns {Ultron} Chaining
+ * @public
  */
 Ultron.prototype.remove = function remove() {
   var args = arguments
@@ -77,7 +77,7 @@ Ultron.prototype.remove = function remove() {
   if (args.length === 1 && 'string' === typeof args[0]) {
     args = args[0].split(/[, ]+/);
   } else if (!args.length) {
-    if (ee.eventNames) {
+    if (typeof ee.eventNames === 'function') {
       args = ee.eventNames();
     } else if (ee._events) {
       args = [];
@@ -118,8 +118,8 @@ Ultron.prototype.remove = function remove() {
 /**
  * Destroy the Ultron instance, remove all listeners and release all references.
  *
- * @returns {Boolean}
- * @api public
+ * @returns {Boolean} Indication of successful destruction.
+ * @public
  */
 Ultron.prototype.destroy = function destroy() {
   if (!this.ee) return false;
