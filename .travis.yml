@@ -10,9 +10,3 @@ after_script:
   - "npm install coveralls@3 && cat coverage/lcov.info | coveralls"
 matrix:
   fast_finish: true
-notifications:
-  irc:
-    channels:
-      - "irc.freenode.org#unshift"
-    on_success: change
-    on_failure: change
