@@ -5,10 +5,8 @@
   "main": "index.js",
   "scripts": {
     "100%": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
-    "test": "mocha test.js",
-    "watch": "mocha --watch test.js",
-    "coverage": "istanbul cover _mocha -- test.js",
-    "test-travis": "istanbul cover _mocha --report lcovonly -- test.js"
+    "test": "istanbul cover _mocha -- test.js",
+    "watch": "mocha --watch test.js"
   },
   "repository": {
     "type": "git",

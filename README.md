@@ -1,6 +1,6 @@
 # Ultron
 
-[![Version npm](http://img.shields.io/npm/v/ultron.svg?style=flat-square)](https://www.npmjs.com/package/ultron)[![Build Status](http://img.shields.io/travis/primus/ultron/master.svg?style=flat-square)](https://travis-ci.org/primus/ultron)[![Dependencies](https://img.shields.io/david/primus/ultron.svg?style=flat-square)](https://david-dm.org/primus/ultron)[![Coverage Status](http://img.shields.io/coveralls/primus/ultron/master.svg?style=flat-square)](https://coveralls.io/r/primus/ultron?branch=master)
+[![Version npm](http://img.shields.io/npm/v/ultron.svg?style=flat-square)](https://www.npmjs.com/package/ultron)[![Build Status](https://img.shields.io/github/workflow/status/primus/ultron/CI/master?label=CI&style=flat-square)](https://github.com/primus/ultron/actions?query=workflow%3ACI+branch%3Amaster)[![Dependencies](https://img.shields.io/david/primus/ultron.svg?style=flat-square)](https://david-dm.org/primus/ultron)[![Coverage Status](http://img.shields.io/coveralls/primus/ultron/master.svg?style=flat-square)](https://coveralls.io/r/primus/ultron?branch=master)
 
 Ultron is a high-intelligence robot. It gathers intelligence so it can start
 improving upon his rudimentary design. It will learn your event emitting
