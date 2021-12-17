@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/websockets/ultron"
+    "url": "https://github.com/primus/ultron"
   },
   "keywords": [
     "Ultron",
@@ -33,7 +33,7 @@
     "pre-commit": "~1.2.0"
   },
   "bugs": {
-    "url": "https://github.com/websockets/ultron/issues"
+    "url": "https://github.com/primus/ultron/issues"
   },
-  "homepage": "https://github.com/websockets/ultron"
+  "homepage": "https://github.com/primus/ultron"
 }
