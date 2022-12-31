@@ -27,7 +27,7 @@
   "license": "MIT",
   "devDependencies": {
     "assume": "~2.3.0",
-    "eventemitter3": "~4.0.7",
+    "eventemitter3": "~5.0.0",
     "istanbul": "0.4.x",
     "mocha": "~5.2.0",
     "pre-commit": "~1.2.0"
