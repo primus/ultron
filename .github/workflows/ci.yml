@@ -28,7 +28,7 @@ jobs:
           require('crypto');
           console.log(crypto.randomBytes(16).toString('hex'));")
         id: get_job_id
-      - uses: coverallsapp/github-action@v1.1.2
+      - uses: coverallsapp/github-action@1.1.3
         with:
           flag-name:
             ${{ steps.get_job_id.outputs.job_id }} (Node.js ${{ matrix.node }})
@@ -38,7 +38,7 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - uses: coverallsapp/github-action@v1.1.2
+      - uses: coverallsapp/github-action@1.1.3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel-finished: true
